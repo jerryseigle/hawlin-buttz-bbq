@@ -17,10 +17,10 @@ const AppHeader: React.FC = () => {
         </div>
         <div className="sm:hidden md:flex items-center space-x-4">
           <div className="flex flex-col font-medium text-white font-montserrat">
-            <span style={{ fontSize: "12px" }}>1503 Kelly's.</span>
-            <span style={{ fontSize: "12px" }}>Clove SC 78620</span>
-            <span style={{ fontSize: "12px" }}>(704) 777-7777</span>
-            <span style={{ fontSize: "12px" }}>2131@gmail.com</span>
+            <span style={{ fontSize: "12px" }}>1503 Kelly's Landing Dr.</span>
+            <span style={{ fontSize: "12px" }}>Mount Holly NC 28120</span>
+            <span style={{ fontSize: "12px" }}>(704) 622-1772</span>
+            <span style={{ fontSize: "12px" }}>LMatthews2131@gmail.com</span>
           </div>
           <div className="border-l h-[48px]"></div>
           <ShoppingBasket className="text-white h-8 w-8" />
