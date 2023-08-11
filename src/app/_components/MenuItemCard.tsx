@@ -28,7 +28,7 @@ export default function MenuItemCard() {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Details
         </Button>
       </CardActions>
     </Card>
