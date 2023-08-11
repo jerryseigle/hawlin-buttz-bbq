@@ -9,7 +9,7 @@ export default function Home() {
       <MenuTabNavbar />
       <main className="flex min-h-screen flex-col items-center justify-between">
         <SectionDivider title="Appetizers" />;
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-2">
           <MenuItemCard />
           <MenuItemCard />
           <MenuItemCard />
