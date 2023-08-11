@@ -1,153 +1,72 @@
-import React from "react";
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Link from "next/link";
 
-const MenuTabNavbar = () => {
+export default function ScrollableTabsButtonAuto() {
+  const menuCategories = [
+    "Legendary BBQ & Combos",
+    "Side",
+    "Deserts",
+    "Drinks",
+    "Bulk",
+    "Lunch",
+    "Salads",
+    "BBQ",
+    "Chicken",
+    "Drinks Copy",
+    "Bulk Copy",
+    "Lunch Copy",
+    "Salads Copy",
+    "BBQ Copy",
+    "Chicken Copy",
+  ];
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    console.log(newValue);
+  };
+
   return (
-    <div className="grid grid-cols-1 gap-4 lg:col-span-3">
-      <div className="p-0">
-        <div className="relative">
-          <div className="relative sm:overflow-hidden">
-            <div className="pb-3">
-              <div className="hidden sm:block">
-                <div
-                  className="border-b border-gray-200"
-                  style={{ backgroundColor: "#F2EFEA" }}
-                >
-                  <nav
-                    className="-mb-px flex space-x-8 overflow-x-auto"
-                    aria-label="Tabs"
-                  >
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name with long name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        0
-                      </span>
-                    </a>
+    <Box sx={{ position: "sticky", bgcolor: "rgb(242, 239, 234)" }}>
+      <Tabs
+        // value={value}
+        // onChange={handleChange}
+        variant="scrollable"
+        scrollButtons="auto"
+        aria-label="scrollable auto tabs example"
+        sx={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          height: { sm: 64, lg: 80 },
+        }}
+      >
+        {menuCategories.map((item) => (
+          <>
+            <Link href="/#tab1" passHref legacyBehavior scroll={false}>
+              <Tab
+                label={item}
+                wrapped
+                sx={{
+                  display: "flex",
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  minWidth: 208,
+                  maxWidth: 208,
+                  fontSize: { sm: 15, md: 18, lg: 18 },
+                  textTransform: "uppercase",
+                }}
+              />
+            </Link>
 
-                    {/* Separator */}
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    {/* Add the remaining tabs and separators */}
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        1
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    <a
-                      href="#"
-                      className="whitespace-nowrap flex items-center py-4 px-1 border-b-2 font-medium text-sm border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200"
-                    >
-                      Tab Name
-                      <span className="bg-gray-100 text-gray-900 ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block">
-                        2
-                      </span>
-                    </a>
-
-                    <div className="border-r border-gray-300 h-6 my-auto"></div>
-
-                    {/* Repeat the pattern for other tabs */}
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <Divider variant="middle" orientation="vertical" flexItem />
+          </>
+        ))}
+      </Tabs>
+    </Box>
   );
-};
-
-export default MenuTabNavbar;
+}
