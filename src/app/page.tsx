@@ -5,16 +5,18 @@ import MenuItemCard from "./_components/MenuItemCard";
 
 export default function Home() {
   return (
-    <main className=" min-h-screen flex-col items-center justify-between">
+    <div>
       <MenuTabNavbar />
-      <SectionDivider title="Appetizers" />;
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <MenuItemCard />
-        <MenuItemCard />
-        <MenuItemCard />
-        <MenuItemCard />
-        <MenuItemCard />
-      </div>
-    </main>
+      <main className="flex min-h-screen flex-col items-center justify-between">
+        <SectionDivider title="Appetizers" />;
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <MenuItemCard />
+          <MenuItemCard />
+          <MenuItemCard />
+          <MenuItemCard />
+          <MenuItemCard />
+        </div>
+      </main>
+    </div>
   );
 }
