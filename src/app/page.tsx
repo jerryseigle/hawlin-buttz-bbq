@@ -15,7 +15,6 @@ export default function Home() {
           <MenuItemCard />
           <MenuItemCard />
         </div>
-        <SectionDivider divId="Appetizerss" title="Appetizers" />;
       </main>
     </div>
   );
