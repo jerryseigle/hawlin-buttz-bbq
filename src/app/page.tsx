@@ -6,6 +6,10 @@ import MenuItemCard from "./_components/MenuItemCard";
 export default function Home() {
   return (
     <div>
+      <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="#333333"
+      ></meta>
       <MenuTabNavbar />
       <main className="flex min-h-screen flex-col items-center justify-between">
         <SectionDivider title="Appetizers" />;
