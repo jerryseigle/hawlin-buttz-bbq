@@ -1,7 +1,6 @@
-import Image from "next/image";
-import MenuTabNavbar from "./_components/MenuTabNavbar";
-import SectionDivider from "./_components/MenuSectionTitle";
 import MenuItemCard from "./_components/MenuItemCard";
+import SectionDivider from "./_components/MenuSectionTitle";
+import MenuTabNavbar from "./_components/MenuTabNavbar";
 
 export default function Home() {
   return (
