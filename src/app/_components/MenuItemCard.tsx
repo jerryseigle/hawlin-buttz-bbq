@@ -18,7 +18,12 @@ export default function MenuItemCard() {
             alt="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography
+              gutterBottom
+              variant="h1"
+              component="h1"
+              className="text-lg font-bold lg:text-2xl"
+            >
               Lizard Smoother Chicken Bowl
             </Typography>
             <Typography variant="body2" color="text.secondary">
