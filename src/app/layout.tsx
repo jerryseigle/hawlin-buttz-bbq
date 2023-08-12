@@ -21,6 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* Status bar Color for mobile devices */}
+      {/* Chrome, Firefox OS and Opera */}
+      <meta name="theme-color" content="#212529" />
+      {/* Windows */}
+      <meta name="msapplication-navbutton-color" content="#212529" />
+      {/* iOS Safari */}
+      <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
       <body className={inter.className}>
         <AppHeader />
         {children}
