@@ -4,7 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="p-8" style={{ backgroundColor: "rgb(242, 239, 234)" }}>
+    <footer
+      className="mt-20 p-8"
+      style={{ backgroundColor: "rgb(242, 239, 234)" }}
+    >
       <div className="text-center mb-6">
         <h2 className="text-lg font-semibold">Stay Connected</h2>
         <div className="flex justify-center mt-2 space-x-4">
