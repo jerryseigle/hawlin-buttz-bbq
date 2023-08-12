@@ -1,6 +1,8 @@
 import React from "react";
 
-const MenuItemDetailsCard = () => {
+const MenuItemDetailsCard = ({ params }: { params: { id: string } }) => {
+  const { id } = params;
+
   return (
     <div className="bg-gray-100 w-full lg:flex">
       {/* Left Side: Image */}
@@ -33,5 +35,10 @@ const MenuItemDetailsCard = () => {
     </div>
   );
 };
+
+// Used because we are export project as static page fetch data here
+export function generateStaticParams() {
+  return [{ id: "demo" }];
+}
 
 export default MenuItemDetailsCard;
