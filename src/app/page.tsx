@@ -21,3 +21,15 @@ export default function Home() {
     </div>
   );
 }
+
+// TODO: data structure example for this page
+const data = [
+  {
+    sectionTitle: "",
+    sectionId: "",
+    id: "",
+    title: "",
+    startingPrice: "",
+    imageUrl: "",
+  },
+];
