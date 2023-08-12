@@ -3,7 +3,7 @@ import React from "react";
 
 const AppHeader: React.FC = () => {
   return (
-    <header className="sticky bg-[#212529] border-b border-white sm:h-[77px] lg:h-[91px]">
+    <header className="bg-[#212529] border-b border-white sm:h-[77px] lg:h-[91px]">
       <div className="container mx-auto px-10 flex justify-center items-center h-full lg:justify-between max-w-none">
         <div className="flex items-center">
           <img

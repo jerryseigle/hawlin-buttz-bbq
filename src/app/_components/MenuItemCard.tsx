@@ -7,7 +7,7 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 
 export default function MenuItemCard() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, backgroundColor: "rgb(242, 239, 234)" }}>
       <CardActionArea>
         <CardMedia
           component="img"
