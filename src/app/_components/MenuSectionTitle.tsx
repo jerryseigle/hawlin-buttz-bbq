@@ -9,7 +9,11 @@ interface SectionDividerProps {
 
 const SectionDivider = (props: SectionDividerProps) => {
   return (
-    <Box id={props.divId} component={"div"} sx={{ padding: 4 }}>
+    <Box
+      id={props.divId.replace(/\s/g, "")}
+      component={"div"}
+      sx={{ padding: 4 }}
+    >
       <Typography
         variant="h1"
         sx={{

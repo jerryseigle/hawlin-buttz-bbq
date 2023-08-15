@@ -4,8 +4,13 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Link from "next/link";
+import { MenuApiResponse } from "../_types/menuApiResponse";
 
-export default function ScrollableTabsButtonAuto() {
+interface MenuTabNavbarProps {
+  data: MenuApiResponse[];
+}
+
+export default function MenuTabNavbar(props: MenuTabNavbarProps) {
   const menuCategories = [
     "Legendary BBQ & Combos",
     "Side",
@@ -44,11 +49,16 @@ export default function ScrollableTabsButtonAuto() {
           height: { sm: 64, lg: 80 },
         }}
       >
-        {menuCategories.map((item) => (
+        {props.data.map((item) => (
           <>
-            <Link href="/#tab1" passHref legacyBehavior scroll={false}>
+            <Link
+              href={`/#${item.title.replace(/\s/g, "")}`}
+              passHref
+              legacyBehavior
+              scroll={false}
+            >
               <Tab
-                label={item}
+                label={item.title}
                 wrapped
                 sx={{
                   display: "flex",

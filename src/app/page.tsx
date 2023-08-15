@@ -23,7 +23,7 @@ export default async function HomePage() {
 
   return (
     <div>
-      <MenuTabNavbar />
+      <MenuTabNavbar data={menuByCategories} />
       <main className="flex min-h-screen flex-col items-center justify-between">
         {menuByCategories.map((category) => (
           <>

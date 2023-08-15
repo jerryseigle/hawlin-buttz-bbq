@@ -5,8 +5,13 @@ import { client } from "@/app/_lib/sanity";
 import { MenuApiResponse, MenuItemType } from "@/app/_types/menuApiResponse";
 
 // Used because we are export project as static page fetch data here
-export function generateStaticParams() {
-  return [{ slug: "demo" }];
+export async function generateStaticParams() {
+  const query = `*[_type == "menuItem"]`;
+
+  const data: MenuItemType[] = await client.fetch(query);
+  return data.map((item) => ({
+    slug: item.slug,
+  }));
 }
 
 async function getMenuItem(slug: string) {
@@ -20,6 +25,7 @@ async function getSideOptions() {
   const query = `*[_type == "category" && title == "Sides"]{
     _id,
     title,
+    sides,
     "menuItems": *[_type == "menuItem" && category._id == ^.categories._ref]
     }`;
 
@@ -44,7 +50,7 @@ export default async function MenuItemPage({ params }: MenuItemPageProps) {
         <MenuItemDetailsCard data={menuItem} />
         <div className="m-10">
           {sideOptions.map((category) => {
-            if (category.title.toLowerCase() === "sides") {
+            if (category.sides) {
               return <SideOptions data={category.menuItems} />;
             }
           })}
