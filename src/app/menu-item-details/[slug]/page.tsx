@@ -6,12 +6,11 @@ import { MenuApiResponse, MenuItemType } from "@/app/_types/menuApiResponse";
 
 // Used because we are export project as static page fetch data here
 export async function generateStaticParams() {
-  const query = `*[_type == "menuItem"]`;
+  const query = `*[_type == "menuItem"].slug.current`;
 
   const data: MenuItemType[] = await client.fetch(query);
-  return data.map((item) => ({
-    slug: item.slug,
-  }));
+
+  return data;
 }
 
 async function getMenuItem(slug: string) {
