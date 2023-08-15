@@ -25,8 +25,8 @@ async function getSideOptions() {
   const query = `*[_type == "category" && title == "Sides"]{
     _id,
     title,
-    sides,
-    "menuItems": *[_type == "menuItem" && category._id == ^.categories._ref]
+    isSides,
+    "menuItems": *[_type == "menuItem" && references(^._id)]
     }`;
 
   const data: MenuApiResponse[] = await client.fetch(query);
@@ -50,7 +50,7 @@ export default async function MenuItemPage({ params }: MenuItemPageProps) {
         <MenuItemDetailsCard data={menuItem} />
         <div className="m-10">
           {sideOptions.map((category) => {
-            if (category.sides) {
+            if (category.isSides) {
               return <SideOptions data={category.menuItems} />;
             }
           })}

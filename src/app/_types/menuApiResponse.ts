@@ -3,7 +3,7 @@ export interface MenuApiResponse {
   title: string;
   showOrder: number;
   menuItems: MenuItemType[];
-  sides: boolean;
+  isSides: boolean;
 }
 
 export interface MenuItemType {
