@@ -11,28 +11,6 @@ interface MenuTabNavbarProps {
 }
 
 export default function MenuTabNavbar(props: MenuTabNavbarProps) {
-  const menuCategories = [
-    "Legendary BBQ & Combos",
-    "Side",
-    "Deserts",
-    "Drinks",
-    "Bulk",
-    "Lunch",
-    "Salads",
-    "BBQ",
-    "Chicken",
-    "Drinks Copy",
-    "Bulk Copy",
-    "Lunch Copy",
-    "Salads Copy",
-    "BBQ Copy",
-    "Chicken Copy",
-  ];
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    console.log(newValue);
-  };
-
   return (
     <Box sx={{ position: "sticky", bgcolor: "rgb(242, 239, 234)" }}>
       <Tabs
