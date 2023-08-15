@@ -55,7 +55,6 @@ export default function MenuTabNavbar(props: MenuTabNavbarProps) {
               href={`/#${item.title.replace(/\s/g, "")}`}
               passHref
               legacyBehavior
-              scroll={false}
             >
               <Tab
                 label={item.title}
