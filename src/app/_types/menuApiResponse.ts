@@ -2,10 +2,10 @@ export interface MenuApiResponse {
   _id: string;
   title: string;
   showOrder: number;
-  posts: Post[];
+  menuItems: MenuItemType[];
 }
 
-export interface Post {
+export interface MenuItemType {
   _rev: string;
   body: Body[];
   mainImage: MainImage;

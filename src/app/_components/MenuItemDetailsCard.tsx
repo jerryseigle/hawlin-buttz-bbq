@@ -1,6 +1,12 @@
 import React from "react";
+import { MenuItemType } from "../_types/menuApiResponse";
+import { urlForImage } from "../_lib/sanity";
 
-const MenuItemDetailsCard = () => {
+interface MenuItemDetailsCardProps {
+  data: MenuItemType;
+}
+
+const MenuItemDetailsCard = (props: MenuItemDetailsCardProps) => {
   return (
     <div className="bg-gray-100 w-full lg:flex">
       {/* Left Side: Image */}
@@ -10,8 +16,8 @@ const MenuItemDetailsCard = () => {
       >
         <img
           className="w-full h-auto md:h-full object-cover object-center"
-          src="https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/tart-london-crispy-roast-chicken-c9d17bc8-70e6-4a70-a79c-6e5ecc3ec118_s900x0_c2145x1253_l0x504.jpg"
-          alt="Product Image"
+          src={urlForImage(props.data.mainImage.asset._ref).url()}
+          alt={props.data.title}
         />
       </div>
 
@@ -20,15 +26,9 @@ const MenuItemDetailsCard = () => {
         className="p-10 md:order-2 lg:w-1/2"
         style={{ backgroundColor: "rgb(242, 239, 234)" }}
       >
-        <h1 className="text-2xl font-bold mb-2">Product Title</h1>
-        <p className="text-gray-600 mb-6">Starting price $11.99</p>
-        <p className="text-gray-800">
-          Down here we will add all of our product details of what is being
-          sold. You can add any information here. Any information that you want
-          to include about this food item can be place here Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Sed euismod nisl vel eleifend
-          varius.
-        </p>
+        <h1 className="text-2xl font-bold mb-2">{props.data.title}</h1>
+        <p className="text-gray-600 mb-6">{`Starting price $${props.data.price}`}</p>
+        <p className="text-gray-800">{props.data?.body[0].children[0].text}</p>
       </div>
     </div>
   );

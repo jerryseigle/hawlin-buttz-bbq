@@ -22,7 +22,6 @@ export default function MenuItemCard(props: MenuItemCardProps) {
           <CardMedia
             component="img"
             height="140"
-            // image="https://thehappyfoodie.co.uk/wp-content/uploads/2021/08/tart-london-crispy-roast-chicken-c9d17bc8-70e6-4a70-a79c-6e5ecc3ec118_s900x0_c2145x1253_l0x504.jpg"
             image={props.image}
             alt={props.title}
           />

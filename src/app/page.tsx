@@ -2,14 +2,14 @@ import MenuItemCard from "./_components/MenuItemCard";
 import SectionDivider from "./_components/MenuSectionTitle";
 import MenuTabNavbar from "./_components/MenuTabNavbar";
 import { client, urlForImage } from "./_lib/sanity";
-import { MenuApiResponse } from "./types/menuApiResponse";
+import { MenuApiResponse } from "./_types/menuApiResponse";
 
 async function getMenu() {
   const query = `*[_type == "category"]{
     _id,
     title,
     showOrder,
-    "posts": *[_type == "post" && category._id == ^.categories._ref]
+    "menuItems": *[_type == "menuItem" && category._id == ^.categories._ref]
   }`;
 
   const data: MenuApiResponse[] = await client.fetch(query);
@@ -29,7 +29,7 @@ export default async function HomePage() {
           <>
             <SectionDivider divId={category.title} title={category.title} />
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-2">
-              {category.posts.map((item) => (
+              {category.menuItems.map((item) => (
                 <MenuItemCard
                   key={item._id}
                   title={item.title}
