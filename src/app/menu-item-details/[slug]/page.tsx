@@ -44,7 +44,7 @@ export default async function MenuItemPage({ params }: MenuItemPageProps) {
         <MenuItemDetailsCard data={menuItem} />
         <div className="m-10">
           {sideOptions.map((category) => {
-            if (category.title === "Sides") {
+            if (category.title.toLowerCase() === "sides") {
               return <SideOptions data={category.menuItems} />;
             }
           })}
