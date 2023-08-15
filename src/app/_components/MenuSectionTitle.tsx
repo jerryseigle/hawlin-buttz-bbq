@@ -12,7 +12,8 @@ const SectionDivider = (props: SectionDividerProps) => {
     <Box
       id={props.divId.replace(/\s/g, "")}
       component={"div"}
-      sx={{ padding: 4 }}
+      className="scroll-smooth"
+      sx={{ padding: 4, scrollBehavior: "smooth" }}
     >
       <Typography
         variant="h1"

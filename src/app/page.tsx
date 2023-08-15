@@ -9,7 +9,7 @@ async function getMenu() {
     _id,
     title,
     showOrder,
-    "menuItems": *[_type == "menuItem" && category._id == ^.categories._ref]
+    "menuItems": *[_type == "menuItem" && references(^._id)]
   }`;
 
   const data: MenuApiResponse[] = await client.fetch(query);
@@ -20,6 +20,7 @@ async function getMenu() {
 
 export default async function HomePage() {
   const menuByCategories = await getMenu();
+  console.log(JSON.stringify(menuByCategories));
 
   return (
     <div>
@@ -29,7 +30,7 @@ export default async function HomePage() {
           <>
             <SectionDivider divId={category.title} title={category.title} />
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mx-2">
-              {category.menuItems.map((item) => (
+              {category.menuItems?.map((item) => (
                 <MenuItemCard
                   key={item._id}
                   title={item.title}
